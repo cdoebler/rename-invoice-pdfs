@@ -1,8 +1,7 @@
-# PDF Invoice Date Extractor
+# PDF Invoice File Renamer
 
 This script processes PDF invoices, extracts their invoice dates using Ollama API or Claude AI as fallback if Ollama is
-not available, and renames the files
-with the date prefix in the format YYMMDD-filename.pdf.
+not available, and renames the files with the date prefix in the format YYMMDD-filename.pdf.
 
 ## Requirements
 

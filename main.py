@@ -40,7 +40,12 @@ def ask_ollama_for_date(text, model):
         os.getenv("OLLAMA_API_URL") + "/generate",
         json={"model": model, "prompt": prompt, "stream": False}
     )
-    return response.json()['response'].strip()
+    response_json = response.json()
+
+    if 'response' not in response_json:
+        raise ValueError(f"Unexpected Ollama API response: {response_json}")
+
+    return response_json['response'].strip()
 
 
 def is_ollama_running() -> bool:
